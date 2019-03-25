@@ -1,9 +1,5 @@
-provider "aws" {
-  region = "eu-central-1"
-}
-
 module "iam_ses_user" {
-  source = "../../../terraform-aws-iam-ses-user"
+  source = "../../"
   name   = "testing-iam-ses-user"
 
   tags = {

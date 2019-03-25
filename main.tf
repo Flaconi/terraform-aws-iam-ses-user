@@ -1,3 +1,8 @@
+provider "aws" {
+  version = "~> 1.60"
+  region  = "eu-central-1"
+}
+
 resource "aws_iam_user" "user" {
   name                 = "${var.name}"
   path                 = "${var.path}"
