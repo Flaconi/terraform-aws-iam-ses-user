@@ -16,4 +16,5 @@ output "this_access_key" {
 output "this_ses_smtp_password" {
   value       = "${aws_iam_access_key.access_key.ses_smtp_password}"
   description = "The secret access key converted into an SES SMTP password"
+  sensitive   = true
 }
