@@ -1,6 +1,14 @@
-# terraform-aws-iam-ses-user
+# AWS IAM SES user
+
+[![Build Status](https://travis-ci.com/Flaconi/terraform-aws-iam-ses-user.svg?branch=master)](https://travis-ci.com/Flaconi/terraform-aws-iam-ses-user)
+[![Tag](https://img.shields.io/github/tag/Flaconi/terraform-aws-iam-ses-user.svg)](https://github.com/Flaconi/terraform-aws-iam-ses-user/releases)
+[![license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Terraform module that handles IAM users which are able to send e-mails via AWS SES
+
+## Examples
+
+Check the [examples](examples) directory.
 
 ## Inputs
 
@@ -21,3 +29,9 @@ Terraform module that handles IAM users which are able to send e-mails via AWS S
 | this\_ses\_smtp\_password | The secret access key converted into an SES SMTP password |
 | this\_user\_arn | ARN of the IAM user |
 | this\_user\_name | IAM user name |
+
+## License
+
+[MIT](LICENSE)
+
+Copyright (c) 2018 [Flaconi GmbH](https://github.com/Flaconi)
