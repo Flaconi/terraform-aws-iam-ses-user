@@ -14,6 +14,7 @@ Check the [examples](examples) directory.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
+| enabled | Set to false to prevent the module from creating any resources | string | `"true"` | no |
 | force\_destroy | Use this to be able to also delete IAM users that were not created with Terraform and have IAM access keys, MFA devices, etc. | string | `"false"` | no |
 | name | Name of the IAM user | string | n/a | yes |
 | path | Path in which to create the user | string | `"/"` | no |

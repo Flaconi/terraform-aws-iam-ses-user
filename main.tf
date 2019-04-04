@@ -4,6 +4,7 @@ provider "aws" {
 }
 
 resource "aws_iam_user" "user" {
+  count                = "${var.enabled ? 1 : 0}"
   name                 = "${var.name}"
   path                 = "${var.path}"
   permissions_boundary = "${var.permissions_boundary}"
@@ -12,6 +13,7 @@ resource "aws_iam_user" "user" {
 }
 
 resource "aws_iam_access_key" "access_key" {
+  count   = "${var.enabled ? 1 : 0}"
   user    = "${aws_iam_user.user.name}"
   pgp_key = "${var.pgp_key}"
 }
