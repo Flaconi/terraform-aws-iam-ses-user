@@ -3,9 +3,15 @@ variable "enabled" {
   default     = "true"
 }
 
-variable "name" {
+variable "user_name" {
   type        = "string"
   description = "Name of the IAM user"
+}
+
+variable "user_policy_name_prefix" {
+  type        = "string"
+  description = "Name prefix of the IAM policy that is assigned to the user"
+  default     = "SESSendOnlyAccess"
 }
 
 variable "path" {
