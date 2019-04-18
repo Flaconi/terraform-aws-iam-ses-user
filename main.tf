@@ -18,21 +18,22 @@ resource "aws_iam_access_key" "this" {
   pgp_key = "${var.pgp_key}"
 }
 
+data "aws_iam_policy_document" "ses_send_access" {
+  statement {
+    effect = "Allow"
+
+    actions = [
+      "ses:SendRawEmail",
+    ]
+
+    resources = ["*"]
+  }
+}
+
 resource "aws_iam_user_policy" "this" {
   count       = "${var.enabled ? 1 : 0}"
   name_prefix = "${var.user_policy_name_prefix}"
   user        = "${aws_iam_user.this.name}"
 
-  policy = <<EOF
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": "ses:SendRawEmail",
-            "Resource": "*",
-            "Effect": "Allow"
-        }
-    ]
-}
-EOF
+  policy = "${data.aws_iam_policy_document.ses_send_access.json}"
 }
