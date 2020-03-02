@@ -1,4 +1,4 @@
-TF_VERSION = 0.11.14
+TF_VERSION = 0.12.20
 help:
 	@echo "lint       Static source code analysis"
 	@echo "test       Integration tests"
