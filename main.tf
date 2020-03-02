@@ -37,4 +37,3 @@ resource "aws_iam_user_policy" "this" {
 
   policy = data.aws_iam_policy_document.ses_send_access.json
 }
-
