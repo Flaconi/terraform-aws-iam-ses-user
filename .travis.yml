@@ -14,15 +14,18 @@ services:
 before_install: true
 install: true
 
+
 ###
 ### Linting
 ###
 before_script:
   - make lint
+  - make gen
+  - git diff --quiet || { echo "Build Changes"; git diff; git status; false; }
 
 
 ###
 ### Testing
 ###
 script:
-  - make test
+  - make test ARGS="-var assumer_account_role_name=test -var assumer_account_id=1234567890"
