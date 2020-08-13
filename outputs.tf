@@ -13,6 +13,12 @@ output "this_access_key" {
   description = "IAM Access Key of the created user, used as the STMP user name"
 }
 
+output "this_access_secret" {
+  value       = element(concat(aws_iam_access_key.this.*.secret, [""]), 0)
+  description = "IAM Access Secret of the created user"
+  sensitive   = true
+}
+
 output "this_ses_smtp_password" {
   value       = element(concat(aws_iam_access_key.this.*.ses_smtp_password, [""]), 0)
   description = "The secret access key converted into an SES SMTP password"
