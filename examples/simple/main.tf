@@ -1,3 +1,8 @@
+provider "aws" {
+  version = "~> 2.49.0"
+  region  = "eu-central-1"
+}
+
 module "iam_ses_user_enabled" {
   source                  = "../../"
   user_name               = "testing-iam-ses-user"
