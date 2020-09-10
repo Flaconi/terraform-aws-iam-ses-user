@@ -22,7 +22,7 @@ Check the [examples](examples) directory.
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.49.0 |
+| aws | n/a |
 
 ## Inputs
 
